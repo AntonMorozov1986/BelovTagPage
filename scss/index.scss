@@ -1,0 +1,146 @@
+main {
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: lightgray;
+
+  font-family: sans-serif;
+}
+
+.menu-open {
+  box-sizing: border-box;
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 5px;
+  box-shadow: 3px 3px 10px 2px rgba(0,0,0,0.3);
+  width: 100%;
+  margin: 0 auto 10px auto;
+  text-transform: uppercase;
+  font-weight: bold;
+
+  &:hover {
+    box-shadow: 3px 3px 10px 2px rgba(0,0,0,0.9);
+  }
+
+  &:active {
+    box-shadow: none;
+    background-color: #fff;
+  }
+}
+
+.tags {
+  max-height: 500px;
+  box-sizing: border-box;
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: lightgreen;
+  box-shadow: 3px 3px 10px 2px rgba(0,0,0,0.6);
+  width: 28%;
+  padding: 10px;
+
+  &-button {
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  &-item {
+    display: none;
+  }
+
+  &-label {
+    display: block;
+    box-sizing: border-box;
+    margin: 10px auto 0 auto;
+    padding: 5px;
+    width: 80%;
+    border: 1px solid black;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 14px;
+    text-transform: uppercase;
+    background-color: lightskyblue;
+
+    &:hover {
+      box-shadow: 0 0 5px 5px rgba(0,0,0,0.4);
+    }
+
+    &:active {
+      box-shadow: none;
+      background-color: #fff;
+    }
+  }
+}
+
+.menu-close {
+  display: block;
+  box-sizing: border-box;
+  margin: 10px auto 0 auto;
+  padding: 5px;
+  width: 80%;
+  border: 1px solid black;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 14px;
+  text-transform: uppercase;
+
+  &:hover {
+    box-shadow: 0 0 5px 5px rgba(0,0,0,0.4);
+  }
+
+  &:active {
+    box-shadow: none;
+    background-color: #fff;
+  }
+}
+
+.checked {
+  background-color: lightcoral;
+}
+
+.posts {
+  box-sizing: border-box;
+  padding: 2%;
+  border: 1px solid black;
+  border-radius: 10px;
+  box-shadow: 3px 3px 10px 2px rgba(0,0,0,0.6);
+  background-color: #eee;
+  width: 70%;
+
+  &-search {
+    width: 100%;
+
+
+    & fieldset {
+      box-sizing: border-box;
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    &-input {
+      width: 80%;
+    }
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .posts {
+    width: 100%;
+  }
+
+  .tags {
+    width: 100%;
+    margin: 0 0 10px 0;
+  }
+}
