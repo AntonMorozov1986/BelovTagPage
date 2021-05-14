@@ -10,6 +10,7 @@ function changeFormHandler() {
       labelEl.classList.remove('checked');
     }
   });
+  tagsEl.submit()
 }
 
 function changeSizeHandler(evt) {
