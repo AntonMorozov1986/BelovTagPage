@@ -1,6 +1,6 @@
 'use strict';
 
-function clickFormHandler() {
+function changeFormHandler() {
   let checkedInputsEl = tagsEl.querySelectorAll('.tags-item');
   checkedInputsEl.forEach( input => {
     let labelEl = tagsEl.querySelector(`label[for="${input.id}"]`);
@@ -33,7 +33,7 @@ let tagsEl = document.querySelector('.tags');
 let menuOpenEl = document.querySelector('.menu-open');
 let menuCloseEl = document.querySelector('.menu-close');
 
-tagsEl.addEventListener('click', clickFormHandler);
+tagsEl.addEventListener('change', changeFormHandler);
 window.addEventListener('load', changeSizeHandler);
 window.addEventListener('resize', changeSizeHandler);
 menuOpenEl.addEventListener('click', toggleMenu);
