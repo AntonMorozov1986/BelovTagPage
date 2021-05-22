@@ -1,4 +1,6 @@
 const CLASS_RELATION = {
-  TagsList: TagsItem,
-  SsmList: SsmItem
+  TagsList: TagItem
+  // SsmList: SsmItem
 }
+
+let tagList = new TagsList();
