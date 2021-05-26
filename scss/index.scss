@@ -43,6 +43,7 @@ main {
   &-list {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-evenly;
     box-sizing: border-box;
   }
 
@@ -59,7 +60,7 @@ main {
   &-label {
     display: block;
     box-sizing: border-box;
-    margin: 10px auto 0 auto;
+    margin: 10px;
     padding: 5px;
     border: 1px solid black;
     border-radius: 5px;

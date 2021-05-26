@@ -6,6 +6,10 @@ class Item {
   }
 
   _init(){
-    return false
+    return false;
+  }
+
+  render() {
+
   }
 }

@@ -1,8 +1,9 @@
 class List {
-  constructor(url = URL, cssSelector, classRelation = CLASS_RELATION) {
-    this.url = url;
+  constructor(apiUrl, listUrl, cssSelector, classRelation = CLASS_RELATION) {
+    this.url = `${apiUrl + listUrl}`;
+    this.listEl = document.querySelector(cssSelector)
     this.itemList = [];
-    this.cssSelector = cssSelector;
+    //this.cssSelector = cssSelector;
     this.classRelation = classRelation
     this._init();
   }
@@ -12,10 +13,10 @@ class List {
   }
 
   render() {
-    const htmlEl = document.querySelector(this.cssSelector);
-    for (let item in this.itemList) {
+    //const htmlEl = document.querySelector(this.cssSelector);
+    for (let item of this.itemList) {
       const itemObject = new this.classRelation[this.constructor.name](item);
-      htmlEl.insertAdjacentHTML('beforeend', itemObject.render());
+      this.listEl.insertAdjacentHTML('beforeend', itemObject.render());
     }
   }
 
@@ -26,13 +27,12 @@ class List {
    */
   makeGETRequest(url) {
     return fetch(url)
-      .then(response => response)
+      .then(response => response.json())
       .catch(error => console.log(`ОШИБКА!!! - ${error}`));
   }
 
-  requestHandler(requestResponse) {
-    const jsonData = requestResponse.json();
-    this.itemList = [...jsonData];
+  requestHandler(json) {
+    this.itemList = [...json];
     this.render();
   }
 }
